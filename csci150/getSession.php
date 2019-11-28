@@ -34,7 +34,7 @@ $day = mysqli_real_escape_string($con,$day);
 $classid = stripslashes($classid);
 $day = stripslashes($day);
 
-$sql = "SELECT ClassID, Lattitude, Longitude, Variance FROM classinfo WHERE ClassID='$classid' AND WeekDays LIKE '%$day%' AND CURRENT_TIME BETWEEN StartTime AND EndTime";
+$sql = "SELECT ClassID, Lattitude, Longitude, LatVariance, LongVariance FROM classinfo WHERE ClassID='$classid' AND WeekDays LIKE '%$day%' AND CURRENT_TIME BETWEEN StartTime AND EndTime";
 $result = mysqli_query($con,$sql);
 $out = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
@@ -47,7 +47,8 @@ if($count == 1)
 	$response[0] = "Class is currently in session";
 	array_push($response, $out["Lattitude"]);
 	array_push($response, $out["Longitude"]);
-	array_push($response, $out["Variance"]);
+	array_push($response, $out["LatVariance"]);
+	array_push($response, $out["LongVariance"]);
 }
 elseif ($count > 1) $response = "Error: this class has too many entries!";
 else $response = "Class not found or is not in session";
