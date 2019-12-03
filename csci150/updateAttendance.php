@@ -36,11 +36,19 @@ $class = mysqli_real_escape_string($con,$class);
 $studentID=stripslashes($studentID);
 $class=stripslashes($class);
 
-//Update attendance entry
+//Update attendance entry (assumes that an entry already exists)
 $sql = "UPDATE entries SET MaxScore=MaxScore+1, Attempted=Attempted+1 WHERE AssignName='Attendance' AND StudentID='$studentID' AND ClassID='$class'";
 
 //Query from database
 $result = mysqli_query($con,$sql);
+
+//Get new grade
+$sql = "SELECT MaxScore,Attempted FROM entries WHERE AssignName='Attendance' AND StudentID='$studentID' AND ClassID='$class'";
+$result = mysqli_query($con,$sql);
+$response = [];
+while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+	array_push($response, $row);
+}
 
 echo json_encode($response);
 ?>
