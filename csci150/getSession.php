@@ -51,7 +51,7 @@ if($count == 1)
 	array_push($response, $out["LongVariance"]);
 }
 elseif ($count > 1) $response = "Error: this class has too many entries!";
-else $response = "Class not found or is not in session";
+else $response = "Class #$classid not found or is not in session";
 
 echo json_encode($response);
 ?>
