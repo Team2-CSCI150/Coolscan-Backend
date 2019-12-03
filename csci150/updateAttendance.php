@@ -37,7 +37,7 @@ $studentID=stripslashes($studentID);
 $class=stripslashes($class);
 
 //Update attendance entry
-$sql = "UPDATE entries SET MaxScore=MaxScore+1, Attempted=Attempted+1 WHERE AssignName='Attendance' AND StudentID='$studentID'";
+$sql = "UPDATE entries SET MaxScore=MaxScore+1, Attempted=Attempted+1 WHERE AssignName='Attendance' AND StudentID='$studentID' AND ClassID='$class'";
 
 //Query from database
 $result = mysqli_query($con,$sql);
