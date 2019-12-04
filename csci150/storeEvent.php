@@ -34,9 +34,15 @@ if(isset($data))
 	$event_desc = $request["event_desc"];
 	$start_time= $request["start_time"];
 	$end_time= $request["end_time"];
-
 }
 
+/*
+$student_id = 200100;
+$event_name = "Testing";
+$event_desc = "This event is meant for testing";
+$start_time = "12/4/2019 6:00 A";
+$end_time = "12/4/2019 11:59 A";
+*/
 //Turn to readable string
 $student_id = mysqli_real_escape_string($con,$student_id);
 $event_name = mysqli_real_escape_string($con,$event_name);
@@ -45,7 +51,7 @@ $start_time = mysqli_real_escape_string($con, $start_time);
 $end_time = mysqli_real_escape_string($con, $end_time);
 
 //strip slashes of string
-$student_id=stripslashes($student_id);
+$student_id = stripslashes($student_id);
 $event_name = stripslashes($event_name);
 $event_desc = stripslashes($event_desc);
 $start_time = stripslashes($start_time);
@@ -67,7 +73,7 @@ if($stmt = mysqli_prepare($con, $sql))
 	}
 	
 }
-mysqli_close($link);
+mysqli_close($con);
 
 echo json_encode($response);
 ?>
