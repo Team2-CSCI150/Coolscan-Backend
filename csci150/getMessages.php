@@ -18,15 +18,41 @@ if($_SERVER['REQUEST_METHOD']=='OPTIONS')
 
 require "dbconnect.php";
 $data = file_get_contents("php://input");
+
 $studentID;
-$studentMsg;
 $teacherID;
-$teacherMsg;
 
 if(isset($data)){
 	$request=json_decode($data,true);
+	$studentID = $request["studentID"];
+	$teacherID = $request["teacherID"];
+}
+
+//Turn to readable string
+$studentID = mysqli_real_escape_string($con,$studentID);
+$teacherID  = mysqli_real_escape_string($con,$teacherID );
+//strip slashes of string
+$studentID=stripslashes($studentID);
+$teacherID =stripslashes($teacherID );
+
+$sql = "SELECT * FROM msgdata WHERE (SenderID='$studentID' AND ReceiverID='$teacherID') OR (ReceiverID='$studentID' AND SenderID='$teacherID')";
+$result = mysqli_query($con,$sql);
+$entries=[];
+//$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+
+while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+	array_push($entries, $row);
+}
+$response = [];
+if(sizeof($entries) > 0){
+	$response[0] = "Got messages!";
+	$response = $entries;
+}
+else{
+	$response = "There are no messages";
 	
 }
 
-
+echo json_encode($response);
 ?>
