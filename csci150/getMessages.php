@@ -46,12 +46,10 @@ while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
 }
 $response = [];
 if(sizeof($entries) > 0){
-	$response[0] = "Got messages!";
 	$response = $entries;
 }
 else{
 	$response = "There are no messages";
-	
 }
 
 echo json_encode($response);
