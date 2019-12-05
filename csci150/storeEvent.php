@@ -14,6 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='OPTIONS')
 		header("Access-Control-Allow-Headers:		{$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
 	exit(0);
 }
+
 require "dbconnect.php";
 $data = file_get_contents("php://input");
 $student_id;
@@ -21,6 +22,7 @@ $event_name;
 $event_desc;
 $start_time;
 $end_time;
+
 if(isset($data))
 {
 	$request = json_decode($data,true);
@@ -30,6 +32,7 @@ if(isset($data))
 	$start_time= $request["start_time"];
 	$end_time= $request["end_time"];
 }
+
 /*
 $student_id = 200100;
 $event_name = "Testing";
@@ -43,13 +46,16 @@ $event_name = mysqli_real_escape_string($con,$event_name);
 $event_desc = mysqli_real_escape_string($con,$event_desc);
 $start_time = mysqli_real_escape_string($con, $start_time);
 $end_time = mysqli_real_escape_string($con, $end_time);
+
 //strip slashes of string
 $student_id = stripslashes($student_id);
 $event_name = stripslashes($event_name);
 $event_desc = stripslashes($event_desc);
 $start_time = stripslashes($start_time);
 $end_time = stripslashes($end_time);
+
 $sql = "INSERT INTO event (student_id,event_name,start_time,end_time,event_desc) VALUES (?,?,?,?,?)";
+
 $response = "";
 if($stmt = mysqli_prepare($con, $sql))
 {
@@ -63,7 +69,9 @@ if($stmt = mysqli_prepare($con, $sql))
 		$response = "Error Occured".$con->error;
 	}
 
+
 }
 mysqli_close($con);
 echo json_encode($response);
 ?>
+
