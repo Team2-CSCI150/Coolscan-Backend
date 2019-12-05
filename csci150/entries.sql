@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 13, 2019 at 02:14 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Host: localhost
+-- Generation Time: Dec 05, 2019 at 04:15 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -121,7 +121,15 @@ INSERT INTO `entries` (`StudentID`, `ClassID`, `AssignName`, `AssignType`, `MaxS
 (200103, 510103, 'Assignment2', 'Assignment', 15, 15),
 (200103, 510103, 'Lab1', 'Assignment', 20, 19),
 (200103, 510103, 'Lab2', 'Assignment', 20, 19),
-(200103, 510103, 'Quiz1', 'Quiz', 30, 30);
+(200103, 510103, 'Quiz1', 'Quiz', 30, 30),
+(200100, 510100, 'Attendance', 'Attendance', 12, 12),
+(200100, 510102, 'Attendance', 'Attendance', 26, 26),
+(200100, 510103, 'Attendance', 'Attendance', 10, 10),
+(200100, 510104, 'Attendance', 'Attendance', 10, 10),
+(200101, 510101, 'Attendance', 'Attendance', 10, 8),
+(200101, 510102, 'Attendance', 'Attendance', 10, 10),
+(200101, 510103, 'Attendance', 'Attendance', 10, 8),
+(200101, 510104, 'Attendance', 'Attendance', 10, 10);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
