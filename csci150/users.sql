@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2019 at 01:08 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Dec 05, 2019 at 05:05 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,10 +42,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`FirstName`, `LastName`, `UserID`, `UserPassword`, `isRegistered`, `PriveledgeLevel`) VALUES
-('John', 'John', 200100, 'password1', 'YES', 'STUDENT'),
-('Melissa', 'Johnson', 200101, 'password2', 'NO', 'STUDENT'),
-('David', 'Davidson', 200102, 'password3', 'NO', 'STUDENT'),
-('Caitlyn', 'Smith', 200103, 'password4', 'NO', 'STUDENT');
+('John', 'Johnson', 200100, 'password1', 'YES', 'STUDENT'),
+('Melissa', 'Smith', 200101, 'password2', 'NO', 'STUDENT'),
+('Juan', 'Graica', 300100, 'password3', 'YES', 'TEACHER'),
+('Emily', 'Polly', 300101, 'password4', 'YES', 'TEACHER'),
+('Crey', 'Cweth', 300102, 'password5', 'YES', 'TEACHER'),
+('Jane', 'Grace', 300103, 'password6', 'YES', 'TEACHER'),
+('Kelly', 'Quiot', 300104, 'password7', 'YES', 'TEACHER');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
