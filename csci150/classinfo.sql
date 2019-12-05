@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2019 at 02:02 AM
+-- Generation Time: Dec 05, 2019 at 01:42 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -44,8 +44,8 @@ CREATE TABLE `classinfo` (
 --
 
 INSERT INTO `classinfo` (`ClassID`, `Lattitude`, `Longitude`, `LatVariance`, `LongVariance`, `StartTime`, `EndTime`, `WeekDays`) VALUES
-(510102, '36.8139238', '-119.7498563459344200', '0.0009000', '0.0040000000000000', '14:00:00', '17:00:00', 'TUTH'),
-(510100, '36.7909769', '-119.6744964129226800', '0.0050000', '0.0010000000000000', '00:00:00', '23:59:59', 'MWF');
+(510100, '36.8122135', '-119.7490400770275200', '0.0050000', '0.0010000000000000', '14:00:00', '17:00:00', 'TUTH'),
+(510102, '36.8148480', '-119.7539328000000200', '0.0050000', '0.0010000000000000', '00:00:00', '23:59:59', 'MWF');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
