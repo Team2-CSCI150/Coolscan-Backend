@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2019 at 02:14 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Dec 05, 2019 at 05:05 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,19 +32,20 @@ CREATE TABLE `classlist` (
   `ClassName` char(20) COLLATE utf8mb4_bin NOT NULL,
   `ClassSubject` char(20) COLLATE utf8mb4_bin NOT NULL,
   `ClassID` int(6) NOT NULL,
-  `ClassInstructor` char(20) COLLATE utf8mb4_bin NOT NULL
+  `ClassInstructor` char(20) COLLATE utf8mb4_bin NOT NULL,
+  `Title` char(5) COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `classlist`
 --
 
-INSERT INTO `classlist` (`ClassName`, `ClassSubject`, `ClassID`, `ClassInstructor`) VALUES
-('Algebra1', 'Math', 510100, 'Somebody Once'),
-('English9', 'English', 510101, 'Told Me'),
-('World History', 'History', 510102, 'The World'),
-('Chemistry9', 'Science', 510103, 'Was Gonna'),
-('Life Biology', 'Science', 510104, 'Roll Me');
+INSERT INTO `classlist` (`ClassName`, `ClassSubject`, `ClassID`, `ClassInstructor`, `Title`) VALUES
+('Algebra 1', 'Math', 510100, 'Graica', 'Mr.'),
+('Calculus 1', 'Math', 510101, 'Polly', 'Miss'),
+('Chemistry 1', 'Science', 510102, 'Cweth', 'Mr.'),
+('World History', 'History', 510103, 'Grace', 'Mrs.'),
+('Life Biology', 'Science', 510104, 'Quiot', 'Mrs.');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
